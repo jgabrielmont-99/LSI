@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Pesquisador Principal
-subtitle: Filipe Lima
+subtitle: Prof. Filipe Lima
 ---
 
 ![FSL](assets/img/rFSL.png){: .mx-auto.d-block :}
