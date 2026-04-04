@@ -6,12 +6,12 @@ subtitle: Lista das publicações que envolvem membros e ex-membros do LSI
 
 31 – FEITOSA, SIDNEY G. D. ; DA SILVA, SIDIANE B. ; LINS, ILÁRIA M. S. ; DA SILVA'JR, JOSENILDO A. ; SANTOS, RUTH C. A. ; <b>LIMA, FILIPE DA S.</b> ; ARAÚJO, ALICE V. ; DOS ANJOS, JANAÍNA V. . Unveiling the Potential of the Thiopyrimidinone Nucleus as a Vasoactive Scaffold: An Approach to Developing Novel Alpha-1 Adrenoceptor Antagonists. ChemistrySelect, v. 10, p. 1-11, 2025.
 
-30 – MORTARA, LAURA ; CORTEZ, MATHEUS P. ; Lacerda, Caroline D. ; CARRETERO, GUSTAVO P. B. ; SCHREIER, SHIRLEY ; CHAIMOVICH, HERNAN ; Lima, Filipe S. ; CUCCOVIA, IOLANDA M. . Micellization of Zwitterionic Surfactant with Opposite Dipoles is Differently Affected by Anions. LANGMUIR, v. 41, p. 9480-9487, 2025
+30 – MORTARA, LAURA ; CORTEZ, MATHEUS P. ; Lacerda, Caroline D. ; CARRETERO, GUSTAVO P. B. ; SCHREIER, SHIRLEY ; CHAIMOVICH, HERNAN ; <b>Lima, Filipe S.</b> ; CUCCOVIA, IOLANDA M. . Micellization of Zwitterionic Surfactant with Opposite Dipoles is Differently Affected by Anions. LANGMUIR, v. 41, p. 9480-9487, 2025
 
 
-29 – PARK, PETER ; MATSUBARA, DANILO K. ; BARZOTTO, DOMENICO R. ; Lima, Filipe S. ; CHAIMOVICH, HERNAN ; MARRINK, SIEWERT J. ; CUCCOVIA, IOLANDA M. . Vesicle protrusion induced by antimicrobial peptides suggests common carpet mechanism for short antimicrobial peptides. Scientific Reports, v. 14, p. 14:9701, 2024.
+29 – PARK, PETER ; MATSUBARA, DANILO K. ; BARZOTTO, DOMENICO R. ; <b>Lima, Filipe S.</b> ; CHAIMOVICH, HERNAN ; MARRINK, SIEWERT J. ; CUCCOVIA, IOLANDA M. . Vesicle protrusion induced by antimicrobial peptides suggests common carpet mechanism for short antimicrobial peptides. Scientific Reports, v. 14, p. 14:9701, 2024.
 
-28 – DOS SANTOS FRANCISCO, AGATHA DENSY ; MAIA, KELLY C.B. ; MOURA, JOSÉ GUILHERME VIEIRA ; NASCIMENTO, REGINA SANDRA VEIGA ; DA SILVA LIMA, FILIPE ; GRASSESCHI, DANIEL . Chitosan Derivatives as Surfactant Carriers for Enhanced Oil Recovery - Experimental and Molecular Dynamic Evaluations of Polymer-Surfactant Interactions. COLLOIDS AND SURFACES A-PHYSICOCHEMICAL AND ENGINEERING ASPECTS, v. 1, p. 131644, 2023.
+28 – DOS SANTOS FRANCISCO, AGATHA DENSY ; MAIA, KELLY C.B. ; <b>MOURA, JOSÉ GUILHERME VIEIRA</b> ; NASCIMENTO, REGINA SANDRA VEIGA ; <b>DA SILVA LIMA, FILIPE</b> ; GRASSESCHI, DANIEL . Chitosan Derivatives as Surfactant Carriers for Enhanced Oil Recovery - Experimental and Molecular Dynamic Evaluations of Polymer-Surfactant Interactions. COLLOIDS AND SURFACES A-PHYSICOCHEMICAL AND ENGINEERING ASPECTS, v. 1, p. 131644, 2023.
 
 27 – LACERDA, C.D. ; JULIANO, M.A. ; LIRIA, C.W. ; MACHINI, M.T. ; Park, P. ; MATSUBARA, D.K. ; BARZOTTO, D.R. ; LIMA, F.S. ; CHAIMOVICH, H. ; CUCCOVIA, I.M. . Position matters in ester thiolysis by cysteine-containing peptides in micelles and vesicles. Results in Chemistry, v. 6, p. 101028, 2023.
 
