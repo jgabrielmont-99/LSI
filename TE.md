@@ -4,6 +4,11 @@ title: Termodinâmica Estatística
 subtitle: Curso online
 ---
 
+A termodinâmica estatística discute jdjejeje ejrh e due rbdur eu rjr e vc e se rir. rir rnrr. rbrhr r rbrhr r. rbr rbr rjrjrje e eneiei3h e ekejen e ekejen. eiejenene. e ele já e eiejenene ejebejejekeke
+eiejenene bj eiebenjejebe. r ejeb e r ejebbene e neieienf HD d nejdie in the r NJ djennekeiejehe
+d. djejrj e rjjrnendnisieiek
+
+
 <ul class="nav-list">
   <li><a href="#">Home</a></li>
   <li><a href="#">About</a></li>
