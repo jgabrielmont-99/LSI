@@ -25,17 +25,17 @@ subtitle: Lista das publicações que envolvem membros e ex-membros do LSI
 
 22 – LACERDA, C.D. ; ANDRADE, M.F.C. ; PESSOA, P.S. ; PRADO, F.M. ; PIRES, P.A.R. ; PINATTO-BOTELHO, M.F. ; WODTKE, F. ; DOS SANTOS, A.A. ; DIAS, L.G. ; <b>LIMA, F.S.</b> ; CHAIMOVICH, H. ; CUCCOVIA, I.M. . Experimental mapping of a pH gradient from a positively charged micellar interface to bulk solution. COLLOIDS AND SURFACES A-PHYSICOCHEMICAL AND ENGINEERING ASPECTS, v. 1, p. 125770, 2020.
 
-21 – MESSIAS, ANDRESA ; SANTOS, DENYS E. S. ; PONTES, FREDERICO J. S. ; Lima, Filipe S. ; SOARES, THEREZA A. . Out of Sight, Out of Mind: The Effect of the Equilibration Protocol on the Structural Ensembles of Charged Glycolipid Bilayers. MOLECULES, v. 25, p. 5120, 2020.
+21 – MESSIAS, ANDRESA ; SANTOS, DENYS E. S. ; PONTES, FREDERICO J. S. ; <b>Lima, Filipe S.</b> ; SOARES, THEREZA A. . Out of Sight, Out of Mind: The Effect of the Equilibration Protocol on the Structural Ensembles of Charged Glycolipid Bilayers. MOLECULES, v. 25, p. 5120, 2020.
 
-20 – PARK, PETER; FRANCO, LEANDRO R.; CHAIMOVICH, HERNAN; COUTINHO, KALINE; CUCOVIA, IOLANDA M.; LIMA, FILIPE S.. Binding and Flip as Initial Steps for BP-100 Antimicrobial Actions. Scientific Reports, v. 9, p-1-14, 2019.
+20 – PARK, PETER; FRANCO, LEANDRO R.; CHAIMOVICH, HERNAN; COUTINHO, KALINE; CUCOVIA, IOLANDA M.; <b>LIMA, FILIPE S.</b> Binding and Flip as Initial Steps for BP-100 Antimicrobial Actions. Scientific Reports, v. 9, p-1-14, 2019.
 
-19 – MINEIRO, MARCELA FRANCO; DE SOUZA PATRICIO, ELIZIANE; PEIXOTO, ALBERT SOUZA; ARAUJO, THAIS LARISSA SILVA; DA SILVA, RAILMARA PEREIRA; MORETTI, ANA IOCHABEL SOARES; LIMA, FILIPE DA SILVA; LAURINDO, FRANCISCO RAFAEL MARTINS; MEOTTI, FLAVIA CARLA. Urate hydroperoxide oxidizes endothelial cell surface protein disulfide isomerase-A1 and impairs adherence. BIOCHIMICA ET BIOPHYSICA ACTA – GENERAL SUBJECTS, v. 129481, p. 129481, 2019.
+19 – MINEIRO, MARCELA FRANCO; DE SOUZA PATRICIO, ELIZIANE; PEIXOTO, ALBERT SOUZA; ARAUJO, THAIS LARISSA SILVA; DA SILVA, RAILMARA PEREIRA; MORETTI, ANA IOCHABEL SOARES; <b>LIMA, FILIPE DA SILVA</b>; LAURINDO, FRANCISCO RAFAEL MARTINS; MEOTTI, FLAVIA CARLA. Urate hydroperoxide oxidizes endothelial cell surface protein disulfide isomerase-A1 and impairs adherence. BIOCHIMICA ET BIOPHYSICA ACTA – GENERAL SUBJECTS, v. 129481, p. 129481, 2019.
 
-18 – MORTARA, LAURA; LIMA, FILIPE DA SILVA; CUCCOVIA, IOLANDA MIDEA; NAZET, ANDREAS; HORINEK, DOMINIK; BUCHNER, RICHARD; CHAIMVICH, HERNAN. Specific Ion Effects on Zwitterionic Micelles Are Independent of Interfacial Hydration Changes. LANGMUIR, V. 1, P. 1-8, 2018.
+18 – MORTARA, LAURA; <b>LIMA, FILIPE DA SILVA</b>; CUCCOVIA, IOLANDA MIDEA; NAZET, ANDREAS; HORINEK, DOMINIK; BUCHNER, RICHARD; CHAIMVICH, HERNAN. Specific Ion Effects on Zwitterionic Micelles Are Independent of Interfacial Hydration Changes. LANGMUIR, V. 1, P. 1-8, 2018.
 
-17 – CUCCOVIA, IOLANDA MIDEA ; DA SILVA LIMA, FILIPE ; CHAIMOVICH, HERNAN . Counting ions and other nucleophiles at surfaces by chemical trapping. BIOPHYSICAL REVIEWS, v. 1, p. 1-19, 2017.
+17 – CUCCOVIA, IOLANDA MIDEA ; <b>DA SILVA LIMA, FILIPE</b> ; CHAIMOVICH, HERNAN . Counting ions and other nucleophiles at surfaces by chemical trapping. BIOPHYSICAL REVIEWS, v. 1, p. 1-19, 2017.
 
-16 – LIMA, FILIPE; ANDRADE, MARCOS ; MORTARA, LAURA ; DIAS, LUIS GUSTAVO ; CUCCOVIA, IOLANDA MIDEA ; CHAIMOVICH, HERNAN . Ion Dehydration Controls the Adsorption at the Micellar Interface: Hydrotropic Ions. PHYSICAL CHEMISTRY CHEMICAL PHYSICS, v. 1, p. 1-10, 2017.
+16 – <b>LIMA, FILIPE</b>; ANDRADE, MARCOS ; MORTARA, LAURA ; DIAS, LUIS GUSTAVO ; CUCCOVIA, IOLANDA MIDEA ; CHAIMOVICH, HERNAN . Ion Dehydration Controls the Adsorption at the Micellar Interface: Hydrotropic Ions. PHYSICAL CHEMISTRY CHEMICAL PHYSICS, v. 1, p. 1-10, 2017.
 
 15 – CRUZ, GUSTAVO NOVAES ; LIMA, FILIPE DA SILVA ; DIAS, LUIS GUSTAVO ; EL SEOUD, OMAR A. ; HORINEK, DOMINIK ; CHAIMOVICH, HERNAN ; CUCCOVIA, IOLANDA MIDEA . Molecular Dynamics Simulations of the Initial State Predict Product Distributions of Dediazoniation of Aryldiazonium in Binary Solvents. Journal of Organic Chemistry, v. 1, p. 150811143553001, 2015.
 
