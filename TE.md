@@ -10,8 +10,8 @@ d. djejrj e rjjrnendnisieiek
 
 
 <ul class="nav-list">
-  <li><a ref="#">Home</a></li>
-  <li><a ref="#">About</a></li>
-  <li><a ref="#">Services</a></li>
-  <li><a ref="#">Contact</a></li>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Contact</a></li>
 </ul>
