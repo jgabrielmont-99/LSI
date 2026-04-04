@@ -3,7 +3,7 @@ layout: page
 title: Interfaces
 subtitle: Regiões especiais do espaço
 ---
-
+<p style="text-align: justify">
 O Laboratório de Sistemas Interfaciais é coordenado pelo Prof. Filipe Lima e o foco principal do grupo é no estudo de sistemas que possuem interfaces.
 
 Interfaces são regiões no espaço que separam duas regiões distintas (fases). Devido ao fato de solutos interagirem diferentemente com as duas regiões, a concentração de espécies próximas às interfaces é invariavelmente diferente das concentrações em seio de solução (bulk). Logo, a composição das interfaces e, consequentemente, as propriedades das interfaces diferem drasticamente das propriedades no bulk, tornando as interfaces regiões especiais no espaço.
@@ -27,3 +27,4 @@ Quando a molécula anfifílica possui duas cadeias hidrofóbicas, como os lipíd
 <b>Figura 3 - </b>Representação de uma bicamada lipídica.
 
 Em nosso grupo, estudamos propriedades fundamentais de diferentes interfaces, com o intuito de entender como as propriedades interfaciais e de agregados podem ser modulados. A determinação de tais parâmetros envolve a utilização de técnicas experimentais variadas, como a fluorescência, espalhamento de luz e calorimetria. Para que haja compreensão das propriedades dos sistemas no nível molecular, combinamos os resultados experimentais com modelagem computacional (Dinâmica Molecular ou Monte Carlo), fornecendo uma visão completa dos sistemas estudados. Por fim, a determinação das propriedades dos sistemas permite que novos sistemas aplicáveis, como rotas alternativas de nanopartículas, sejam desenvolvidos.
+</p>
