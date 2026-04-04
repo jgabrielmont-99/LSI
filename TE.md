@@ -12,17 +12,4 @@ subtitle: Curso online
 </nav>
 
 
-A termodinâmica estatística bla bla bla bla
-asodifja[sjd
-asiodfja[sjfdas
-kasdf
-asdf
-asf
-a
-afaposjaakjfpaos
-a
-akfakfoakfoakoa
-akjfaokfaokfoakfoa
-
-a
-aofkakoakakfoakoak
+A termodinâmica estatística é o ramo da ciência que trata sistemas físico-químicos do ponto de vista da estatística, transformando propriedades atômico/moleculares em propriedades coletivas.
