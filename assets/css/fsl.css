@@ -9,21 +9,22 @@
 /* Wrapper for mathbox + equation number */
 .mathbox-wrapper {
   display: flex;
-  align-items: center;              /* vertically align box and number */
-  justify-content: space-between;   /* box on left, number on right */
-  margin: 8px 0;                /* vertical spacing (keep center alignment) */
+  align-items: flex-start;              /* vertically align box and number */
+  justify-content: center;   /* box on left, number on right */
+  margin: 6px 0;                /* vertical spacing (keep center alignment) */
   max-width: 800px;                 /* optional: limit max width */
-  gap: 12px;
+  gap: 6px;
 }
 
 .mathbox {
   background-color: #f0f0f0;       /* soft light grey background */
   border: 2px solid #888888;       /* medium grey border */
   border-radius: 12px;             /* smooth round corners */
-  padding: 8px 12px;              /* space inside the box */
+  padding: 6px 10px;              /* space inside the box */
   display: inline-block;            /* shrink box to formula width */
   margin: 0;                   /* vertical spacing between formulas */
   font-size: 1.15em;                /* slightly larger font for readability */
+  text-align: center;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.15); /* subtle shadow for depth */
   transition: background-color 0.3s, box-shadow 0.3s; /* optional hover effect */
 }
@@ -48,4 +49,12 @@
 .mathbox .highlighted-line {
   color: #d12f2f;  /* change color as needed */
   font-weight: bold; /* optional */
+}
+
+/* Fix extra vertical spacing from MathJax */
+.mathbox .mjx-chtml {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1em;  /* tighter line spacing */
 }
