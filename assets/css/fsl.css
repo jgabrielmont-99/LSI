@@ -61,8 +61,7 @@
 
 /* 2. Tighten internal MathJax layout */
 .mathbox .mjx-chtml {
-  line-height: 1em !important;
-  font-weight: bold;
+  line-height: 1em !important;  
 }
 
 /* 3. (Optional but safe) ensure compact rendering */
