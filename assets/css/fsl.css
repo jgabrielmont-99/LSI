@@ -73,6 +73,10 @@
 
 /* edit to include Tidal in SN */
 /* TIDAL icon inside Font Awesome stack */
+.fa-stack {
+  position: relative;
+}
+
 .tidal-icon {
   width: 60%;              /* scale inside circle */
   height: 60%;
