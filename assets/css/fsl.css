@@ -75,15 +75,43 @@
 @media (max-width: 768px) {
   .side-nav {
     display: none;
-  }
+}
 
-  .content {
+.content {
     margin-left: 0;
     margin-right: 0;
     padding: 10px;
+}
+
+  /* equations for phone */
+@media (max-width: 768px) {
+  .mathbox {
+    width: 100%;
+    font-size: 1em;
   }
 
-  footer {
-    margin-left: 0 !important;
+  .mathbox-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .eq-numbers {
+    margin-top: 5px;
+  }
+}
+/* text for phone */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  p {
+    text-align: left;  /* justified text looks bad on mobile */
+  }
+}
+
+  /* images for phone */
+img {
+  max-width: 100%;
+  height: auto;
 }
