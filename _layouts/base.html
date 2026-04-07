@@ -31,23 +31,6 @@ common-js:
   {% include head.html %}
 </head>
 
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const sidebar = document.querySelector(".side-nav");
-
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-  });
-</script>
-
-<script>
-  document.querySelectorAll(".side-nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.querySelector(".side-nav").classList.remove("active");
-    });
-  });
-</script>
-  
 <body>
   <button id="menu-toggle">☰</button>
   {% include gtm_body.html %}
@@ -57,5 +40,26 @@ common-js:
 
   {% include footer.html %}
   {% include footer-scripts.html %}
+
+<script>
+  // Wait until DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const sidebar = document.querySelector(".side-nav");
+    
+    // Toggle sidebar
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    // Close sidebar when any link inside is clicked
+    sidebar.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
+    });
+  });
+</script>
+  
 </body>
 </html>
