@@ -77,6 +77,10 @@
   width: 60%;              /* scale inside circle */
   height: 60%;
   object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   filter: grayscale(100%); /* default = grey */
   transition: filter 0.3s ease;
