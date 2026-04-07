@@ -71,18 +71,6 @@
   padding: 0 !important;
 }
 
-/* sidebar for mobile*/
-@media (max-width: 768px) {
-  .side-nav {
-    display: none;
-}
-
-.content {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 10px;
-}
-
   /* equations for phone */
 @media (max-width: 768px) {
   .mathbox {
@@ -118,6 +106,19 @@ img {
 
   /* toggle sidebar for phones */
 /* Mobile only */
+
+/* sidebar for mobile*/
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+}
+
+.content {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
 
   /* Hide sidebar by default */
