@@ -84,7 +84,6 @@
 /* Make MathJax behave inside flex */
 .eq-with-img .MathJax_Display {
   flex: 1;
-  margin: 0;
 }
 
 /* Keep equation + number aligned */
@@ -92,11 +91,6 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
-}
-
-/* Push number slightly right */
-.eq-with-img mjx-tag {
-  margin-left: 10px;
 }
 
 /* Image styling */
