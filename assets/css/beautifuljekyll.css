@@ -1134,5 +1134,5 @@ body {
 /* Force all bold text in body to weight 700 */
 body strong,
 body b {
-  font-weight: 700;
+  font-weight: 800;
 }
