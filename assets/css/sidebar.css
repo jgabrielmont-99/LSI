@@ -1,7 +1,7 @@
 /* Sidebar Container */
 .side-nav {
   height: 100%;       /* Full-height */
-  width: 60px;       /* collapsed width */
+  width: 75px;       /* collapsed width */
   position: fixed;    /* Stay in place on scroll */
   left: 0px;
   top: 0px;
@@ -64,7 +64,7 @@
 }
 
 body.has-sidebar footer {
-  margin-left: 60px;
+  margin-left: 75px;
   transition: margin-left 0.3s ease;
 }
 
@@ -78,7 +78,7 @@ body.has-sidebar footer {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.6;
 }
 
