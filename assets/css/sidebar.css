@@ -33,19 +33,24 @@
   padding: 10px 15px;
   text-decoration: none;
   box-sizing: border-box;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: hidden;
 }
 
 .side-nav li a span {
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  display: none;
+}
+
+.side-nav:hover li a {
+  justify-content: flex-start;
 }
 
 .side-nav:hover li a span {
-  opacity: 1;
+  display: block;
+  margin-left: 10px;
 }
 
 /* Hover effect */
