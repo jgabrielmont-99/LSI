@@ -20,11 +20,13 @@
 }
 
 .toolbox-title {
-  margin: 0;  
+  margin: 0;
+  text-align: center;
 }
 
 .toolbox-subtitle {
-  margin: 0;  
+  margin: 0;
+  text-align: center;
 }
 
 /* Content */
