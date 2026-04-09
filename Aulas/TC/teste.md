@@ -33,7 +33,7 @@ $$ f(x) = ax^2 + bx + c $$
 
 Ajusta as barras aí para ver o que acontece:
 "
-interactive="
+  interactive="
 
 <label>
   a:
