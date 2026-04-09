@@ -103,6 +103,7 @@
   .mathbox {
     width: 100%;
     font-size: 1em;
+    overflow-x: auto;
   }
 
   .mathbox-wrapper {
