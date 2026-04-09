@@ -66,15 +66,15 @@
 }
 
 /* Offset main content so it doesn't overlap */
-.content {
+/*.content {
   margin-left: 60px;
   margin-right: 150px;
   transition: margin-left 0.3s ease;
-}
-
+}*/
+/*
 .side-nav:hover ~ .content {
   margin-left: 150px;
-}
+}*/
 
 body.has-sidebar footer {
   margin-left: 60px;
@@ -87,13 +87,13 @@ body.has-sidebar footer {
 
 .side-nav li a .initial {
   background-color: rgba(0,0,0,0.05);
-  border-radius: 4px;
-  padding: 2px 0;
+  /*border-radius: 4px;*/
+  /*padding: 2px 0;*/
 }
 
 .side-nav:hover li a .label {
   display: inline-block;
-  margin-left: 8px;
+  /*margin-left: 8px;*/
 }
 
 .side-nav::after {
