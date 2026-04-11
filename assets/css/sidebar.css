@@ -122,7 +122,8 @@ body.has-sidebar footer {
     position: fixed;
     top: 50px;
     left: 0px;
-    margin-right: 20px;
+    right: 50;
+    margin-right: 100px;
     z-index: 1100;
     background: #FF9164;
     color: black;
