@@ -17,6 +17,16 @@
   overflow-y: auto;
 }
 
+
+/* Remove list bullets */
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 90px;
+  padding-bottom: 50px;
+  margin: 0;  
+}
+
 /* Style the links */
 .side-nav li a {
   display: block;     /* Makes the whole area clickable */
