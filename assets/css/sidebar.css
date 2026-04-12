@@ -29,7 +29,7 @@
 /* Style the links */
 .side-nav li a {
   display: block;     /* Makes the whole area clickable */
-  width: %100;
+  width: 2ch;
   color: rgba(0,0,0,0.5);
   padding: 10px 15px;
   text-decoration: none;
@@ -45,7 +45,8 @@
   text-align: center;       /* or left if you prefer */
   word-break: normal;
   overflow-wrap: break-word;
-  color: rgba(0,0,0,1.0)
+  color: rgba(0,0,0,1.0);
+  width: %100;
 }
 
 /* Hover effect */
