@@ -51,17 +51,17 @@
 
 /* 1. Remove big vertical margins from $$ ... $$ */
 .mathbox mjx-container[jax="CHTML"][display="true"] {
-  margin: 0 !important;
+  margin: 0;
 }
 
 /* 2. Tighten internal MathJax layout */
 .mathbox .mjx-chtml {
-  line-height: 1.4em !important;  
+  line-height: 1.4em;
 }
 
 /* 3. (Optional but safe) ensure compact rendering */
 .mathbox mjx-container {
-  padding: 0 !important;
+  padding: 0;
 }
 
 /* NEW: container for numbers + image */
