@@ -4,7 +4,7 @@ title: Pós-Graduando
 subtitle: Msc. Gabriel Montengro
 ---
 
-![PPG](gatito2.png){: .mx-auto.d-block :}
+![GM](gatito2.png){: .mx-auto.d-block :}
 
 <p class="jt">
 .
@@ -18,7 +18,7 @@ subtitle: Msc. Gabriel Montengro
 subtitle: José Guilherme
 ---
 
-![PPG](gatito4.png){: .mx-auto.d-block :}
+![JG](gatito4.png){: .mx-auto.d-block :}
 
 <p class="jt">
 .
