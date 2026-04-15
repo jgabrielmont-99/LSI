@@ -15,7 +15,7 @@ Gosto de gatos. Odeio gente.
 
 ## Breno Renan
 
-![BRLS](gatito3.png){: .mx-auto.d-block .img-rounded :}
+![BRLS](gatito3.png){: .mx-auto.d-block :}
 
 <p class="jt">
 .
