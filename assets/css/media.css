@@ -26,3 +26,13 @@
     margin-top: 120px;   /* adjust to your navbar height */
   }
 }
+
+@media (max-width: 768px) {
+  .topics-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    margin-right: 10px;
+    color: inherit;
+  }
+}
