@@ -23,8 +23,8 @@ navbar-links:
   Pesquisa: "Pesquisa"
   Membros:
     - Pesquisador Principal: "Membros/FSL"
-    - Pós-Graduandos: "Membros/PPG"
-    - Iniciação Científica: "Membros/IC"
+    - Pós-Graduandos: "Membros/PPG/GM"
+    - Iniciação Científica: "Membros/AASB/BRLS"
   Publicações: "Publicacao"
   Ensino:
     - Termodinâmica Clássica: "Aulas/TC"
