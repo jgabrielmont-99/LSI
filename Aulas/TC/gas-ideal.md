@@ -52,3 +52,4 @@ A equação de estado dos gases ideais é dada por $$P \cdot V = n \cdot R \cdot
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
