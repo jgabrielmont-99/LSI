@@ -89,19 +89,6 @@
   display: block;
 }
 
-.MathJax_Display {
-  max-width: 100%;
-}
-
-/* Only scroll when NOT inside mathbox */
-body .MathJax_Display {
-  overflow-x: auto;
-}
-
-.mathbox .MathJax_Display {
-  overflow-x: visible; /* cancel scrolling inside boxes */
-}
-
   /* equations for phone */
 @media (max-width: 768px) {
   .mathbox {
@@ -119,7 +106,14 @@ body .MathJax_Display {
     margin-top: 5px;
   }
 
-  .mathbox .mjx-container {
+  mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+  
+/*  .mathbox .mjx-container {
     max-width: 100%
-  }
+  }*/
 }
