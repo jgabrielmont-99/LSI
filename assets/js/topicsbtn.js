@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const btn = document.getElementById("topics-toggle");
-  if (!btn) return;
+  const sidebar = document.querySelector(".side-nav");
+
+  if (!btn || !sidebar) return;
 
   btn.addEventListener("click", function() {
-    document.body.classList.toggle("active");
+    sidebar.classList.toggle("active");
   });
 });
