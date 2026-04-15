@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Iniciação científica
-subtitle: Prof. Filipe Lima
+subtitle: Breno Renan
 ---
 
 
