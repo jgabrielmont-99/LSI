@@ -11,6 +11,9 @@ Gosto de gatos. Odeio gente.
 </p>
 
 ---
+---
+layout: page
+title: Iniciação Científica
 subtitle: Breno Renan
 ---
 
