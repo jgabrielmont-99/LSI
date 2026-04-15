@@ -4,7 +4,7 @@ title: Pesquisador Principal
 subtitle: Prof. Filipe Lima
 ---
 
-![BRLS](fBRLS.png){: .mx-auto.d-block :}
+![BRLS](rBRLS.png){: .mx-auto.d-block :}
 
 <p class="jt">
 .
