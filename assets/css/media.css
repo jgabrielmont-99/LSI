@@ -36,3 +36,18 @@
     color: inherit;
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .topics-btn {
+    margin-left: 10px;   
+    margin-right: auto;  
+    background: transparent;
+    border: none;
+    font-size: 18px;
+  }
+}
