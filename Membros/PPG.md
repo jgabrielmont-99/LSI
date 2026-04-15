@@ -1,8 +1,10 @@
 ---
 layout: page
 title: Pós-Graduando
-subtitle: Msc. Gabriel Montengro
 ---
+
+
+## Msc. Gabriel Montengro
 
 ![GM](gatito2.png){: .mx-auto.d-block :}
 
@@ -14,9 +16,7 @@ subtitle: Msc. Gabriel Montengro
 .
 </p>
 
----
-subtitle: José Guilherme
----
+## José Guilherme
 
 ![JG](gatito4.png){: .mx-auto.d-block :}
 
