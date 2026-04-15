@@ -112,9 +112,5 @@
   overflow-x: auto !important;
   overflow-y: hidden;
   max-width: 100%;
-}
-  
-/*  .mathbox .mjx-container {
-    max-width: 100%
-  }*/
+  }
 }
