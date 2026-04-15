@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!btn) return;
 
   btn.addEventListener("click", function() {
-    document.body.classList.toggle("sidebar-open");
+    document.body.classList.toggle("active");
   });
 });
