@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Iniciação Científica
-subtitle: Adriane Brito
 ---
+
+## Adriane Brito
 
 ![AASB](gatito.png){: .mx-auto.d-block :}
 
@@ -11,11 +12,8 @@ Gosto de gatos. Odeio gente.
 </p>
 
 ---
----
-layout: page
-title: Iniciação Científica
-subtitle: Breno Renan
----
+
+## Breno Renan
 
 ![BRLS](BRLS.png){: .mx-auto.d-block .img-rounded :}
 
