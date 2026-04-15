@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 options: {
                     responsive: true,
                     maintainAspectRatio: false, // Ajusta ao tamanho fixo do CSS do prof
+                    aspectRatio: 1,
                     scales: {
                         x: { 
                             type: 'linear', 
