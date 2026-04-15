@@ -1,59 +1,91 @@
-//gas-ideal.js
+document.addEventListener("DOMContentLoaded", () => {
+    // Procura todas as caixas de ferramentas (toolbox) na página
+    document.querySelectorAll(".toolbox").forEach(box => {
+        
+        // Só executa este código se for a toolbox do Gás Ideal
+        if (box.id !== "gas-ideal-tool") return;
 
-const R_GAS = 0.08314;
-let meuGraficoGases = null;
+        const canvas = box.querySelector(".graph-canvas");
+        const selectNumCurvas = box.querySelector(".select-num-curvas");
+        const selectX = box.querySelector("#select-x");
+        
+        if (!canvas) return;
 
-// Esta função faz o cálculo que estava no App.vue
-function calcularY(xValue, config, axisX, axisY) {
-    const state = { p: config.p, V: config.V, n: config.n, T: config.T };
-    state[axisX] = xValue;
+        const ctx = canvas.getContext("2d");
+        const R = 0.08314;
+        let chartInstance = null;
 
-    if (axisY === 'p') return (state.n * R_GAS * state.T) / state.V;
-    if (axisY === 'V') return (state.n * R_GAS * state.T) / state.p;
-    if (axisY === 'T') return (state.p * state.V) / (state.n * R_GAS);
-    if (axisY === 'n') return (state.p * state.V) / (R_GAS * state.T);
-    return 0;
-}
+        function drawGasGraph() {
+            const numCurvas = parseInt(selectNumCurvas.value);
+            const axisX = selectX.value;
+            const datasets = [];
+            const cores = ['#2980b9', '#e74c3c', '#27ae60']; // Azul, Vermelho, Verde
 
-function atualizarSimulacaoGases() {
-    const ctx = document.getElementById('canvas-gases').getContext('2d');
-    
-    const axisX = document.getElementById('select-x').value;
-    const axisY = "p"; // Fixamos Y em Pressão por enquanto para facilitar
-    const numCurvas = parseInt(document.getElementById('num-curvas').value) || 1;
+            for (let i = 1; i <= numCurvas; i++) {
+                const slider = box.querySelector(`.temp-c${i}`);
+                const temp = parseFloat(slider.value);
+                
+                // Atualiza o número que aparece ao lado do slider
+                slider.nextElementSibling.textContent = temp;
 
-    if (meuGraficoGases) meuGraficoGases.destroy();
+                const pontos = [];
+                // Se X for Volume, variamos V de 1 a 50. Se for Temp, variamos T de 100 a 1000.
+                const start = (axisX === 'V') ? 1 : 100;
+                const end = (axisX === 'V') ? 50 : 1000;
+                const step = (axisX === 'V') ? 1 : 20;
 
-    const datasets = [];
-    const cores = ['#2980b9', '#e74c3c', '#27ae60']; // Azul, Vermelho, Verde
+                for (let val = start; val <= end; val += step) {
+                    let y;
+                    if (axisX === 'V') {
+                        y = (1 * R * temp) / val; // P = nRT/V
+                    } else {
+                        y = (1 * R * val) / 10;   // P = nRT/V (com V fixo em 10 para exemplo)
+                    }
+                    pontos.push({ x: val, y: y });
+                }
 
-    for (let i = 0; i < numCurvas; i++) {
-        const pontos = [];
-        // Pega os valores dos inputs específicos de cada curva (T1, T2, T3...)
-        const temp = parseFloat(document.getElementById(`temp-c${i+1}`).value) || 300;
-        const n_mol = parseFloat(document.getElementById(`n-c${i+1}`).value) || 1.0;
-
-        for (let x = 1; x <= 50; x += 1) {
-            pontos.push({ x: x, y: calcularY(x, {T: temp, n: n_mol, V: 10, p: 1}, axisX, axisY) });
-        }
-
-        datasets.push({
-            label: `Curva ${i+1} (T=${temp}K)`,
-            data: pontos,
-            borderColor: cores[i],
-            pointRadius: 0,
-            tension: 0.3
-        });
-    }
-
-    meuGraficoGases = new Chart(ctx, {
-        type: 'line',
-        data: { datasets },
-        options: {
-            scales: {
-                x: { type: 'linear', title: { display: true, text: axisX } },
-                y: { title: { display: true, text: axisY } }
+                datasets.push({
+                    label: `T = ${temp}K`,
+                    data: pontos,
+                    borderColor: cores[i-1],
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    tension: 0.3
+                });
             }
+
+            // Destrói o gráfico anterior para não bugar
+            if (chartInstance) chartInstance.destroy();
+
+            // Cria o novo gráfico usando Chart.js
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: { datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Ajusta ao tamanho fixo do CSS do prof
+                    scales: {
+                        x: { 
+                            type: 'linear', 
+                            title: { display: true, text: axisX === 'V' ? 'Volume (L)' : 'Temperatura (K)' } 
+                        },
+                        y: { 
+                            title: { display: true, text: 'Pressão (bar)' },
+                            min: 0
+                        }
+                    }
+                }
+            });
         }
+
+        // Adiciona os "ouvintes" para atualizar o gráfico sempre que mexer em algo
+        selectNumCurvas.addEventListener("change", drawGasGraph);
+        selectX.addEventListener("change", drawGasGraph);
+        box.querySelectorAll("input[type=range]").forEach(s => {
+            s.addEventListener("input", drawGasGraph);
+        });
+
+        // Desenha o gráfico pela primeira vez
+        drawGasGraph();
     });
-}
+});
