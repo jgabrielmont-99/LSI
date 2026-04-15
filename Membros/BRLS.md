@@ -4,7 +4,7 @@ title: Pesquisador Principal
 subtitle: Breno Renan
 ---
 
-![BRLS](BRLS.png){: .mx-auto.d-block :}
+![BRLS](BRLS.png){: .mx-auto.d-block .img-rounded :}
 
 <p class="jt">
 .
