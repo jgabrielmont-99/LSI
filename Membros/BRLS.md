@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Pesquisador Principal
-subtitle: Prof. Filipe Lima
+subtitle: Breno Renan
 ---
 
 ![BRLS](rBRLS.jpeg){: .mx-auto.d-block :}
