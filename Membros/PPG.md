@@ -4,7 +4,7 @@ title: Pós-Graduando
 ---
 
 
-## Msc. Gabriel Montengro
+## Msc. Gabriel Montenegro
 
 ![GM](gatito2.png){: .mx-auto.d-block :}
 
