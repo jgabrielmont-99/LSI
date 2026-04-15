@@ -89,6 +89,13 @@
   display: block;
 }
 
+/* Apply ONLY to equations outside mathboxes */
+:not(.mathbox) > .MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
   /* equations for phone */
 @media (max-width: 768px) {
   .mathbox {
