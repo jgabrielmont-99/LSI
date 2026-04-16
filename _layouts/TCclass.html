@@ -1,11 +1,9 @@
 ---
 layout: base
-topics_label: TC
 ---
 
 {% include header.html type="page" %}
-{% assign my_label = topics_label %}
-{% include nav.html show_topics_button=true topics_label=my_label %}
+{% include nav.html show_topics_button=true topics_label="TC" %}
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
