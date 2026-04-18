@@ -3,7 +3,7 @@
   max-width: 760px;          /* match your content width */
   height: auto;
   margin: 0.5rem auto 2rem;
-  padding: 0.5rem 1.2rem 1rem;
+  padding: 1rem 1.2rem 1rem;
   border-radius: 10px;
   background: #E6F2FF;
   border: 2px solid #003366;
@@ -25,7 +25,7 @@
 .toolbox-header {
   margin-bottom: 0;
   margin-top: 0;
-  padding-top: 0;
+  padding-top: 1rem;
 }
 
 .toolbox-title {
