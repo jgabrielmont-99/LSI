@@ -81,3 +81,6 @@
 .toolbox h3 {
   counter-increment: none;
 }
+
+.aula-container > h2 { ... }
+.aula-container > h3 { ... }
