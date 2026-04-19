@@ -38,6 +38,15 @@
   font-family: "Montserrat";
 }
 
+.toolbox-title::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background: #ddd;
+  margin: 8px auto 0;
+}
+
 .toolbox-subtitle {
   margin: 0;
   text-align: center;
