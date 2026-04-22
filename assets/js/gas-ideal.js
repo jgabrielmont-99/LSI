@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             valInicial = (parseFloat(v.val) * (i * 0.2)).toFixed(1);
                         } else {
                             valInicial = (parseFloat(v.val) * (1 + i)).toFixed(1);
+                        }
+                        
                         // Adicionada a classe jsbox-input para padronização
                         html += `<td><input type="number" class="${v.id.toLowerCase()}-${i} jsbox-input" value="${valInicial}" step="${v.step}" style="width:90%"></td>`;
                     }
