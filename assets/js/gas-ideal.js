@@ -36,8 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (v.id !== axisX && v.id !== axisY) {
                     html += `<tr><td style="font-weight:bold; padding:5px;">${v.label}</td>`;
                     for(let i=0; i<num; i++) {
-                        // Valores iniciais progressivos (C1=100%, C2=150%, C3=200%)
-                        let valInicial = (parseFloat(v.val) * (1 + i * 0.5)).toFixed(1);
+                        // Valores iniciais progressivos C1, C2, C3
+                        let valInicial; 
+                        if (v.id == 'n') {
+                            valInicial = (parseFloat(v.val) * (i * 0.2)).toFixed(1);
+                        } else {
+                            valInicial = (parseFloat(v.val) * (1 + i)).toFixed(1);
                         // Adicionada a classe jsbox-input para padronização
                         html += `<td><input type="number" class="${v.id.toLowerCase()}-${i} jsbox-input" value="${valInicial}" step="${v.step}" style="width:90%"></td>`;
                     }
