@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `</tr>`;
 
             const variables = [
-                { id: 'p', label: 'p (bar)', step: '0.1', val: '1.0' },
-                { id: 'V', label: 'V (L)', step: '1', val: '10.0' },
-                { id: 'T', label: 'T (K)', step: '10', val: '300' },
-                { id: 'n', label: 'n (mol)', step: '0.1', val: '1.0' }
+                { id: 'p', label: 'p / bar', step: '0.1', val: '1.0' },
+                { id: 'V', label: 'V / L', step: '1', val: '10.0' },
+                { id: 'T', label: 'T / K', step: '10', val: '300' },
+                { id: 'n', label: 'n / mol', step: '0.1', val: '1.0' }
             ];
 
             variables.forEach(v => {
