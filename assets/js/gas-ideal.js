@@ -37,11 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     html += `<tr><td style="font-weight:bold; padding:5px;">${v.label}</td>`;
                     for(let i=0; i<num; i++) {
                         // Valores iniciais progressivos C1, C2, C3
-                        let valInicial; 
-                        if (v.id == 'n') {
-                            valInicial = (parseFloat(v.val) * (1 + i * 0.2)).toFixed(1);
-                        } else {
-                            valInicial = (parseFloat(v.val) * (1 + i)).toFixed(1);
+                        let valInicial;
+                        let base = parseFloat(v.val);
+                        
+                        // Usamos incrementos diferentes para cada ID de variável
+                        // para evitar cancelamento de proporção (p/n, T/p, etc.)
+                        if (v.id === 'p') {
+                            valInicial = base + (i * 1.5); // Incremento de 1.5
+                        } else if (v.id === 'V') {
+                            valInicial = base + (i * 10.0); // Incremento de 10
+                        } else if (v.id === 'T') {
+                            valInicial = base + (i * 150.0); // Incremento de 150
+                        } else if (v.id === 'n') {
+                            valInicial = base + (i * 0.4); // Incremento de 0.4
                         }
                         
                         // Adicionada a classe jsbox-input para padronização
