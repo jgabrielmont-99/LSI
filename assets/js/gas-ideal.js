@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         // Valores iniciais progressivos C1, C2, C3
                         let valInicial; 
                         if (v.id == 'n') {
-                            valInicial = (parseFloat(v.val) * (i * 0.2)).toFixed(1);
+                            valInicial = (parseFloat(v.val) * (1 + i * 0.2)).toFixed(1);
                         } else {
                             valInicial = (parseFloat(v.val) * (1 + i)).toFixed(1);
                         }
