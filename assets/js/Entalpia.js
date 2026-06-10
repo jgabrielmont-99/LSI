@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".toolbox").forEach(box => {
         if (box.id !== "enthalpy-tool") return;
 
-        // Seletores corrigidos – agora usando os IDs do HTML
+        // Seletores corrigidos – usando os IDs reais do HTML
         const reactionSelect = box.querySelector("#param-reaction");
         const t1Input        = box.querySelector("#param-t1");
         const t2Input        = box.querySelector("#param-t2");
