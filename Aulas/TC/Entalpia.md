@@ -38,7 +38,6 @@ next_class: "/LSI/Aulas/TC/A10"
                         </select>
                     </div>
 
-                    
                     <div class="jsbox-input-row">
                         <label>Temperatura Inicial T₁ / K:</label>
                         <input type="number" id="param-t1" class="jsbox-input" value="298.15" step="10" min="298.15" max="1000">
@@ -59,7 +58,7 @@ next_class: "/LSI/Aulas/TC/A10"
             </div> 
 
             <div style="margin-top: 15px;">
-                <button class="generate-enthalpy-btn jsbox-btn jsbox-btn-primary">Calcular e atualizar os gráficos</button>
+                <button id="btn-calculate" class="generate-enthalpy-btn jsbox-btn jsbox-btn-primary">Calcular e atualizar os gráficos</button>
             </div>
         </div> 
 
@@ -90,3 +89,5 @@ next_class: "/LSI/Aulas/TC/A10"
     </p>
 </div> 
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Entalpia.js"></script>
