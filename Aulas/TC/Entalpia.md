@@ -37,6 +37,8 @@ next_class: "/LSI/Aulas/TC/A10"
                             <option value="methane">Combustão do Metano (CH₄ + 2O₂ → CO₂ + 2H₂O)</option>
                         </select>
                     </div>
+
+                    
                     <div class="jsbox-input-row">
                         <label>Temperatura Inicial T₁ / K:</label>
                         <input type="number" id="param-t1" class="jsbox-input" value="298.15" step="10" min="298.15" max="1000">
@@ -57,7 +59,7 @@ next_class: "/LSI/Aulas/TC/A10"
             </div> 
 
             <div style="margin-top: 15px;">
-                <button id="btn-calculate" class="jsbox-btn jsbox-btn-primary">Calcular e atualizar os gráficos</button>
+                <button class="generate-enthalpy-btn jsbox-btn jsbox-btn-primary">Calcular e atualizar os gráficos</button>
             </div>
         </div> 
 
