@@ -91,7 +91,4 @@ next_class: "/LSI/Aulas/TC/A10"
 </div> 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-// Primeira execução ao carregar a página da aula
-window.addEventListener('load', updateSimulation);
-</script>
+<script src="Entalpia.js"></script>
