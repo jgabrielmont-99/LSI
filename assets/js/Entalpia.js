@@ -1,24 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".toolbox").forEach(box => {
-        // Trava de segurança: só executa se a caixinha atual for a da entalpia
         if (box.id !== "enthalpy-tool") return;
 
-        // --- Seleção de Elementos usando o escopo local 'box' ---
-        const reactionSelect = box.querySelector(".param-reaction");
-        const t1Input = box.querySelector(".param-t1");
-        const t2Input = box.querySelector(".param-t2");
-        const btnCalculate = box.querySelector(".generate-enthalpy-btn");
-        const resultsPanel = box.querySelector("#results-panel");
-        const infoBox = box.querySelector(".id-info-box");
-        const reactionEquation = box.querySelector(".reaction-equation");
-        
-        const cpCanvas = box.querySelector("#cpChart");
+        // Seletores corrigidos – agora usando os IDs do HTML
+        const reactionSelect = box.querySelector("#param-reaction");
+        const t1Input        = box.querySelector("#param-t1");
+        const t2Input        = box.querySelector("#param-t2");
+        const btnCalculate   = box.querySelector("#btn-calculate");
+        const resultsPanel   = box.querySelector("#results-panel");
+        const infoBox        = box.querySelector("#info-box");
+
+        const cpCanvas       = box.querySelector("#cpChart");
         const kirchhoffCanvas = box.querySelector("#kirchhoffChart");
 
         let cpChartInstance = null;
         let kirchhoffChartInstance = null;
 
-        // --- Banco de Dados NIST Interno (Shomate) ---
+        // Banco de dados NIST (inalterado)
         const nistData = {
             "N2":  { A: 28.98641,  B: 1.853978,  C: -9.647459, D: 16.63537,  E: 0.000117,  hf298: 0.0 },
             "H2":  { A: 33.066178, B: -11.36342, C: 11.432816, D: -2.772874, E: -0.158558, hf298: 0.0 },
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        // --- Funções Matemáticas Auxiliares ---
+        // Funções matemáticas (inalteradas)
         function calculateCp(compId, T) {
             const data = nistData[compId];
             const t = T / 1000;
@@ -73,32 +71,27 @@ document.addEventListener("DOMContentLoaded", () => {
             return sum;
         }
 
-        // --- Lógica Principal de Simulação ---
         function updateSimulation() {
             const reactionKey = reactionSelect.value;
             const selectedReaction = reactions[reactionKey];
-            
+
             let t1 = parseFloat(t1Input.value);
             let t2 = parseFloat(t2Input.value);
-            
-            // Validações de limites de temperatura
+
             if (t1 < 298.15) { t1 = 298.15; t1Input.value = 298.15; }
             if (t2 > selectedReaction.maxTemp) { t2 = selectedReaction.maxTemp; t2Input.value = selectedReaction.maxTemp; }
             if (t2 < t1) { t2 = t1 + 10; t2Input.value = t2; }
 
-            // Atualiza painel informativo lateral
             infoBox.innerHTML = `
                 <p style="margin: 5px 0;"><strong>Faixa Aceitável:</strong> 298.15 K a ${selectedReaction.maxTemp} K</p>
                 <p style="margin: 5px 0; color: #003366;"><strong>Sistema:</strong> ${selectedReaction.equation}</p>
             `;
 
-            // Cálculo do deltaH padrão (298.15 K)
             let deltaH298 = 0;
             selectedReaction.components.forEach(comp => {
                 deltaH298 += comp.coeff * nistData[comp.id].hf298;
             });
 
-            // Integrais de Kirchhoff via TFC (Teorema Fundamental do Cálculo)
             let integralT1 = 0;
             let integralT2 = 0;
             selectedReaction.components.forEach(comp => {
@@ -106,12 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 integralT1 += comp.coeff * shomatePrimitive(data, t1);
                 integralT2 += comp.coeff * shomatePrimitive(data, t2);
             });
-            
-            const deltaH_T1 = deltaH298 + (integralT1 - shomatePrimitiveFromRef(selectedReaction, t1)) / 1000; 
-            const totalKirchhoffIntegral = (integralT2 - integralT1) / 1000; 
+
+            const deltaH_T1 = deltaH298 + (integralT1 - shomatePrimitiveFromRef(selectedReaction, t1)) / 1000;
+            const totalKirchhoffIntegral = (integralT2 - integralT1) / 1000;
             const deltaH_T2 = deltaH_T1 + totalKirchhoffIntegral;
 
-            // Mostra e atualiza painel numérico de resultados
             resultsPanel.style.display = "block";
             resultsPanel.innerHTML = `
                 <h3 style="margin-top: 0; color: #276a3e; border-bottom: 1px solid #b5e2a3; padding-bottom: 5px;">Resultados Termodinâmicos</h3>
@@ -123,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </table>
             `;
 
-            // Geração do eixo X (Temperaturas)
             const temperatures = [];
             const step = (selectedReaction.maxTemp - 298.15) / 50;
             for (let T = 298.15; T <= selectedReaction.maxTemp; T += step) {
@@ -131,10 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             if (!temperatures.includes(selectedReaction.maxTemp)) temperatures.push(selectedReaction.maxTemp);
 
-            // Montagem dos datasets do Gráfico 1
             const datasetsChart1 = [];
             const colors = ['#4e73df', '#1cc88a', '#f6c23e', '#e74a3b'];
-            
+
             selectedReaction.components.forEach((comp, idx) => {
                 const cpValues = temperatures.map(T => calculateCp(comp.id, T));
                 datasetsChart1.push({
@@ -147,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            // Linha Net da Reação (Delta_rCp)
             const deltaCpValues = temperatures.map(T => {
                 let sum = 0;
                 selectedReaction.components.forEach(comp => { sum += comp.coeff * calculateCp(comp.id, T); });
@@ -164,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 pointRadius: 0
             });
 
-            // Renderizar Gráfico 1
             if (cpChartInstance) cpChartInstance.destroy();
             cpChartInstance = new Chart(cpCanvas.getContext('2d'), {
                 type: 'line',
@@ -179,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Organizar pontos para Hachura Inteligente no Gráfico 2
             const infoKirchhoffPoints = [];
             const shadedPoints = [];
 
@@ -191,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Renderizar Gráfico 2
             if (kirchhoffChartInstance) kirchhoffChartInstance.destroy();
             kirchhoffChartInstance = new Chart(kirchhoffCanvas.getContext('2d'), {
                 type: 'line',
@@ -227,14 +213,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // --- Triggers/Listeners ---
         btnCalculate.addEventListener("click", updateSimulation);
         reactionSelect.addEventListener("change", () => {
             t2Input.value = reactions[reactionSelect.value].maxTemp;
             updateSimulation();
         });
 
-        // Inicialização automática
+        // Primeira execução automática
         updateSimulation();
     });
 });
