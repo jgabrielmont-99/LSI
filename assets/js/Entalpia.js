@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".toolbox").forEach(box => {
         if (box.id !== "enthalpy-tool") return;
 
-        // Seletores corrigidos – usando os IDs reais do HTML
+        // Seletores via ID sincronizados perfeitamente com o seu HTML
         const reactionSelect = box.querySelector("#param-reaction");
         const t1Input        = box.querySelector("#param-t1");
         const t2Input        = box.querySelector("#param-t2");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let cpChartInstance = null;
         let kirchhoffChartInstance = null;
 
-        // Banco de dados NIST (inalterado)
+        // Banco de dados NIST
         const nistData = {
             "N2":  { A: 28.98641,  B: 1.853978,  C: -9.647459, D: 16.63537,  E: 0.000117,  hf298: 0.0 },
             "H2":  { A: 33.066178, B: -11.36342, C: 11.432816, D: -2.772874, E: -0.158558, hf298: 0.0 },
@@ -27,31 +27,28 @@ document.addEventListener("DOMContentLoaded", () => {
             "H2O": { A: 30.09200,  B: 6.832514,  C: 6.793435,  D: -2.534480, E: 0.082139,  hf298: -241.83 }
         };
 
+        // Faixas dinâmicas baseadas no feedback real da reação
         const reactions = {
             ammonia: {
                 name: "Formação de Amônia",
                 equation: "N₂(g) + 3H₂(g) → 2NH₃(g)",
+                minTemp: 298.15,
                 maxTemp: 500,
                 components: [
-                    { id: "N2", coeff: -1 },
-                    { id: "H2", coeff: -3 },
-                    { id: "NH3", coeff: 2 }
+                    { id: "N2", coeff: -1 }, { id: "H2", coeff: -3 }, { id: "NH3", coeff: 2 }
                 ]
             },
             methane: {
                 name: "Combustão do Metano",
                 equation: "CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
-                maxTemp: 1000,
+                minTemp: 500,
+                maxTemp: 700,
                 components: [
-                    { id: "CH4", coeff: -1 },
-                    { id: "O2", coeff: -2 },
-                    { id: "CO2", coeff: 1 },
-                    { id: "H2O", coeff: 2 }
+                    { id: "CH4", coeff: -1 }, { id: "O2", coeff: -2 }, { id: "CO2", coeff: 1 }, { id: "H2O", coeff: 2 }
                 ]
             }
         };
 
-        // Funções matemáticas (inalteradas)
         function calculateCp(compId, T) {
             const data = nistData[compId];
             const t = T / 1000;
@@ -78,12 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
             let t1 = parseFloat(t1Input.value);
             let t2 = parseFloat(t2Input.value);
 
-            if (t1 < 298.15) { t1 = 298.15; t1Input.value = 298.15; }
+            // Travas de segurança agora usam o min e max específicos de cada reação
+            if (t1 < selectedReaction.minTemp) { t1 = selectedReaction.minTemp; t1Input.value = selectedReaction.minTemp; }
+            if (t1 > selectedReaction.maxTemp) { t1 = selectedReaction.maxTemp - 10; t1Input.value = t1; }
             if (t2 > selectedReaction.maxTemp) { t2 = selectedReaction.maxTemp; t2Input.value = selectedReaction.maxTemp; }
             if (t2 < t1) { t2 = t1 + 10; t2Input.value = t2; }
 
             infoBox.innerHTML = `
-                <p style="margin: 5px 0;"><strong>Faixa Aceitável:</strong> 298.15 K a ${selectedReaction.maxTemp} K</p>
+                <p style="margin: 5px 0;"><strong>Faixa Aceitável:</strong> ${selectedReaction.minTemp} K a ${selectedReaction.maxTemp} K</p>
                 <p style="margin: 5px 0; color: #003366;"><strong>Sistema:</strong> ${selectedReaction.equation}</p>
             `;
 
@@ -115,9 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 </table>
             `;
 
+            // Geração de dados para o gráfico baseada nos limites da reação selecionada
             const temperatures = [];
-            const step = (selectedReaction.maxTemp - 298.15) / 50;
-            for (let T = 298.15; T <= selectedReaction.maxTemp; T += step) {
+            const step = (selectedReaction.maxTemp - selectedReaction.minTemp) / 50;
+            for (let T = selectedReaction.minTemp; T <= selectedReaction.maxTemp; T += step) {
                 temperatures.push(T);
             }
             if (!temperatures.includes(selectedReaction.maxTemp)) temperatures.push(selectedReaction.maxTemp);
@@ -128,12 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedReaction.components.forEach((comp, idx) => {
                 const cpValues = temperatures.map(T => calculateCp(comp.id, T));
                 datasetsChart1.push({
-                    label: `${comp.id} (Cp,m)`,
-                    data: cpValues,
-                    borderColor: colors[idx % colors.length],
-                    borderWidth: 2,
-                    fill: false,
-                    pointRadius: 0
+                    label: `${comp.id} (Cp,m)`, data: cpValues, borderColor: colors[idx % colors.length], borderWidth: 2, fill: false, pointRadius: 0
                 });
             });
 
@@ -144,13 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             datasetsChart1.push({
-                label: 'Δ_rC_p (Reação Net)',
-                data: deltaCpValues,
-                borderColor: '#000000',
-                borderWidth: 3,
-                borderDash: [5, 5],
-                fill: false,
-                pointRadius: 0
+                label: 'Δ_rC_p (Reação Net)', data: deltaCpValues, borderColor: '#000000', borderWidth: 3, borderDash: [5, 5], fill: false, pointRadius: 0
             });
 
             if (cpChartInstance) cpChartInstance.destroy();
@@ -158,8 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 type: 'line',
                 data: { labels: temperatures.map(T => T.toFixed(0)), datasets: datasetsChart1 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     scales: {
                         x: { title: { display: true, text: 'Temperatura / K' } },
                         y: { title: { display: true, text: 'C_p,m / (J · mol⁻¹ · K⁻¹)' } }
@@ -173,9 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
             temperatures.forEach((T, index) => {
                 const val = deltaCpValues[index];
                 infoKirchhoffPoints.push({ x: T, y: val });
-                if (T >= t1 && T <= t2) {
-                    shadedPoints.push({ x: T, y: val });
-                }
+                if (T >= t1 && T <= t2) { shadedPoints.push({ x: T, y: val }); }
             });
 
             if (kirchhoffChartInstance) kirchhoffChartInstance.destroy();
@@ -183,30 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 type: 'line',
                 data: {
                     datasets: [
-                        {
-                            label: 'Δ_rC_p (Polinômio da Reação)',
-                            data: infoKirchhoffPoints,
-                            borderColor: '#17a2b8',
-                            borderWidth: 2,
-                            pointRadius: 0,
-                            fill: false
-                        },
-                        {
-                            label: `Integral de Kirchhoff (T₁ para T₂)`,
-                            data: shadedPoints,
-                            borderColor: 'transparent',
-                            backgroundColor: 'rgba(23, 162, 184, 0.35)',
-                            fill: 'origin',
-                            pointRadius: 0,
-                            showLine: true
-                        }
+                        { label: 'Δ_rC_p (Polinômio da Reação)', data: infoKirchhoffPoints, borderColor: '#17a2b8', borderWidth: 2, pointRadius: 0, fill: false },
+                        { label: `Integral de Kirchhoff (T₁ para T₂)`, data: shadedPoints, borderColor: 'transparent', backgroundColor: 'rgba(23, 162, 184, 0.35)', fill: 'origin', pointRadius: 0, showLine: true }
                     ]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     scales: {
-                        x: { type: 'linear', min: 298.15, max: selectedReaction.maxTemp, title: { display: true, text: 'Temperatura / K' } },
+                        x: { type: 'linear', min: selectedReaction.minTemp, max: selectedReaction.maxTemp, title: { display: true, text: 'Temperatura / K' } },
                         y: { title: { display: true, text: 'Δ_rC_p / (J · mol⁻¹ · K⁻¹)' } }
                     }
                 }
@@ -214,12 +184,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         btnCalculate.addEventListener("click", updateSimulation);
+        
+        // Atualiza os inputs de temperatura de forma inteligente ao trocar de reação
         reactionSelect.addEventListener("change", () => {
-            t2Input.value = reactions[reactionSelect.value].maxTemp;
+            const currentReaction = reactions[reactionSelect.value];
+            t1Input.value = currentReaction.minTemp;
+            t2Input.value = currentReaction.maxTemp;
             updateSimulation();
         });
 
-        // Primeira execução automática
         updateSimulation();
     });
 });
