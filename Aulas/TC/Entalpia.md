@@ -90,4 +90,3 @@ next_class: "/LSI/Aulas/TC/A10"
     </p>
 </div> 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
